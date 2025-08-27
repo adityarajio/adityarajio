@@ -508,3 +508,84 @@ body::before {
     background: linear-gradient(90deg, #63e0ff, #6b63ff);
     transform: scale(1.02);
 }
+/* ---------- Portfolio: center cards ---------- */
+.portfolio {
+  padding: 60px 20px;
+  text-align: center;
+  background: #0f172a;
+  color: #fff;
+}
+
+/* Use flex to center one or many cards reliably */
+.portfolio-container {
+  display: flex;
+  flex-wrap: wrap;          /* allows multiple cards to wrap */
+  gap: 30px;
+  justify-content: center;  /* centers the cards horizontally */
+  align-items: flex-start;
+  margin: 30px auto 0;
+  padding: 0 16px;          /* breathing room on very small screens */
+  max-width: 1200px;        /* optional: keeps the cards in a centered column */
+}
+
+/* Card sizing + appearance */
+.portfolio-card {
+  background: #1e293b;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  width: 100%;
+  max-width: 360px;         /* important: prevents the card stretching full width */
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.5);
+}
+
+.portfolio-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.portfolio-content {
+  padding: 18px;
+  text-align: left;
+}
+
+.portfolio-content h3 {
+  font-size: 1.25rem;
+  margin: 0 0 8px;
+  color: #38bdf8;
+}
+
+.portfolio-content p {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+}
+
+/* Button */
+.portfolio-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #3b82f6;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background .2s ease, transform .12s ease;
+}
+.portfolio-btn:hover { background: #2563eb; transform: translateY(-2px); }
+
+/* small screens: stack and center text */
+@media (max-width: 480px) {
+  .portfolio-card { max-width: 100%; }
+  .portfolio-card img { height: 180px; }
+  .portfolio-content { text-align: center; }
+  .portfolio-content h3 { text-align:center; }
+}
